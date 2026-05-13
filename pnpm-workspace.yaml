@@ -1,0 +1,6 @@
+# pnpm 11+ 用此檔案決策哪些套件的 install 腳本可以執行。
+# msw 由 vitest@4 與 shadcn cli 帶入，僅需要它的 postinstall 產出 service worker。
+allowBuilds:
+  msw: true
+  '@biomejs/biome': true
+  esbuild: true
