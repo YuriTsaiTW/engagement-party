@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="爸爸的回憶照片佔位圖">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdebe6" />
+      <stop offset="100%" stop-color="#e8a999" />
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="16" r="1.2" fill="#c46a52" opacity="0.18" />
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)" />
+  <rect width="800" height="600" fill="url(#dots)" />
+  <g fill="#7a2e1f" text-anchor="middle" font-family="'Noto Serif TC', serif">
+    <text x="400" y="285" font-size="56" font-style="italic">爸爸</text>
+    <text x="400" y="335" font-size="20" letter-spacing="6" fill="#9b3d29">photo placeholder</text>
+    <text x="400" y="380" font-size="14" fill="#7a2e1f" opacity="0.6">memoir · pilot</text>
+  </g>
+</svg>
