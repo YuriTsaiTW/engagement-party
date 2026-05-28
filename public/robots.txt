@@ -1,0 +1,6 @@
+# 本站為私人訂婚派對互動頁，不公開索引。
+# 註：部署於 GitHub Pages 子路徑 /engagement-party/，此檔位於子路徑下；
+# 多數爬蟲只認 domain root 的 robots.txt，所以實際擋索引以 index.html 的
+# <meta name="robots" content="noindex, nofollow"> 為主，本檔為輔助訊號。
+User-agent: *
+Disallow: /
