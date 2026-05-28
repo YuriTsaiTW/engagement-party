@@ -17,6 +17,8 @@ describe('Home 頁', () => {
       { initialEntries: ['/'] },
     )
     render(<RouterProvider router={router} />)
-    expect(screen.getByRole('heading', { name: /昱德\(Lloyd\) & 秀慧\(Yuri\)/ })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /昱德\(Lloyd\) & 秀慧\(Yuri\)/ }),
+    ).toBeInTheDocument()
   })
 })

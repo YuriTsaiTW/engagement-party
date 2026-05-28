@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import App from './App'
 import Home from './pages/Home'
+import Memoir from './pages/Memoir'
 import NotFound from './pages/NotFound'
 
 export const router = createBrowserRouter(
@@ -10,6 +11,7 @@ export const router = createBrowserRouter(
       element: <App />,
       children: [
         { index: true, element: <Home /> },
+        { path: 'memoir', element: <Memoir /> },
         { path: '*', element: <NotFound /> },
       ],
     },
