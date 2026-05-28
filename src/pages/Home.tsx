@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center">
-      <p className="font-body text-sm uppercase tracking-[0.4em] text-brand-500">2026 · 10 · 10</p>
+      <p className="font-body text-sm uppercase tracking-[0.4em] text-brand-500">2026 · 09 · 26</p>
       <h1 className="font-display text-5xl text-brand-700 sm:text-6xl">
         昱德(Lloyd) &amp; 秀慧(Yuri)
       </h1>
