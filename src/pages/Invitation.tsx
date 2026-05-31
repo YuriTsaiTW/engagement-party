@@ -92,6 +92,35 @@ function InfoColumn() {
           </a>
         </InfoBlock>
 
+        <InfoBlock label="注意事項">
+          <ul className="space-y-1 font-body text-sm text-brand-900/80 print:space-y-0 print:text-[0.65rem]">
+            <li className="flex gap-2">
+              <span aria-hidden="true" className="select-none text-brand-300">
+                ·
+              </span>
+              <span>不收禮金，您人到就是最棒的禮物。</span>
+            </li>
+            <li className="flex gap-2">
+              <span aria-hidden="true" className="select-none text-brand-300">
+                ·
+              </span>
+              <span>記得先吃個午餐墊墊胃，但別太飽 — 現場備有甜點外燴等大家。</span>
+            </li>
+            <li className="flex gap-2">
+              <span aria-hidden="true" className="select-none text-brand-300">
+                ·
+              </span>
+              <span>歡迎自備環保餐具，一起對地球溫柔一點。</span>
+            </li>
+            <li className="flex gap-2">
+              <span aria-hidden="true" className="select-none text-brand-300">
+                ·
+              </span>
+              <span>剩下的就是 — Enjoy!</span>
+            </li>
+          </ul>
+        </InfoBlock>
+
         <InfoBlock label="停車資訊">
           <p className="font-body text-sm text-brand-900/80 print:text-[0.65rem]">
             場地周邊停車示意如下，建議提早抵達以利尋找車位。
