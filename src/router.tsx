@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import App from './App'
 import Home from './pages/Home'
+import Invitation from './pages/Invitation'
 import Memoir from './pages/Memoir'
 import NotFound from './pages/NotFound'
 
@@ -11,6 +12,7 @@ export const router = createBrowserRouter(
       element: <App />,
       children: [
         { index: true, element: <Home /> },
+        { path: 'invitation', element: <Invitation /> },
         { path: 'memoir', element: <Memoir /> },
         { path: '*', element: <NotFound /> },
       ],

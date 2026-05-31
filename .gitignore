@@ -146,3 +146,6 @@ vite.config.ts.timestamp-*
 playwright-report/
 test-results/
 playwright/.cache/
+
+# 本機 Chrome DevTools 預覽截圖（不入版控）
+.preview/

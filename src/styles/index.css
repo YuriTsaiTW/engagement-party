@@ -155,3 +155,23 @@
     text-rendering: optimizeLegibility;
   }
 }
+
+/* ====================================================================
+ * 邀請函列印版型：A6 橫式（148 × 105 mm，接近台灣常見明信片尺寸）
+ * 左圖右資訊雙欄；保留 brand 暖珊瑚色（colorAdjust: exact 防止瀏覽器灰階化）
+ * ==================================================================== */
+@page invitation-card {
+  size: 148mm 105mm;
+  margin: 6mm;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+  .invitation-print-page {
+    page: invitation-card;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
