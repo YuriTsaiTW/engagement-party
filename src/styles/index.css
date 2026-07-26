@@ -173,5 +173,14 @@
     page: invitation-card;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+
+    /* 明信片維持左圖右資訊雙欄（螢幕版的 md:grid 在 print:block 已被關閉） */
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 4mm;
+    align-items: start;
+  }
+  .invitation-print-page img {
+    break-inside: avoid;
   }
 }
