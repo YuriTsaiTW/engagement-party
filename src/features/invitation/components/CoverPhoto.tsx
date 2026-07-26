@@ -1,3 +1,4 @@
+import coverDesktop2x from '../assets/cover-desktop@2x.jpg'
 import coverDesktop from '../assets/cover-desktop.jpg'
 import coverMobile from '../assets/cover-mobile.jpg'
 
@@ -11,7 +12,13 @@ const ALT = '昱德與秀慧的婚紗照，兩人在紅磚建築的光影迴廊�
 export function CoverPhoto() {
   return (
     <picture>
-      <source media="(min-width: 768px)" srcSet={coverDesktop} width={1133} height={1700} />
+      {/* 左欄約佔半個 viewport，在 Retina 上 1x 素材會被放大，因此另備 2x（僅 HiDPI 下載） */}
+      <source
+        media="(min-width: 768px)"
+        srcSet={`${coverDesktop} 1x, ${coverDesktop2x} 2x`}
+        width={1133}
+        height={1700}
+      />
       <img
         src={coverMobile}
         alt={ALT}

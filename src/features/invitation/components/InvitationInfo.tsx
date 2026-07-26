@@ -76,6 +76,12 @@ export function InvitationDetails() {
         </ul>
       </InfoBlock>
 
+      <InfoBlock label="停車資訊">
+        <p className="font-body text-sm text-brand-900/80 print:text-[0.65rem]">
+          場地周邊車位有限，建議提早抵達以利尋找車位。
+        </p>
+      </InfoBlock>
+
       <VenueMap />
 
       <PrintOnlyQrCode />

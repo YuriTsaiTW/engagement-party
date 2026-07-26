@@ -53,8 +53,14 @@ test('1280px 為兩欄式：左欄撐滿 viewport 且滾動時固定，右欄可
   expect(metrics.position).toBe('sticky')
   expect(metrics.overflow).toBe('hidden')
 
-  // 桌機斷點透過 <picture> 換成直幅素材
-  await expect(page.locator('main img').first()).toHaveJSProperty('naturalWidth', 1133)
+  // 桌機斷點透過 <picture> 換成直幅素材（1x／2x 皆為直幅，故以長寬比判斷不受 DPR 影響）
+  const cover = page.locator('main img').first()
+  const asset = await cover.evaluate((el: HTMLImageElement) => ({
+    currentSrc: el.currentSrc,
+    isPortrait: el.naturalHeight > el.naturalWidth,
+  }))
+  expect(asset.currentSrc).toContain('cover-desktop')
+  expect(asset.isPortrait).toBe(true)
 
   // 頁面可滾動（右欄內容較長），左欄滾動後仍貼齊頂端
   const scrollHeight = await page.evaluate(() => document.documentElement.scrollHeight)

@@ -41,6 +41,11 @@ describe('Invitation', () => {
     }
   })
 
+  it('保留停車提醒（沿用改版前的來賓提示）', () => {
+    renderInvitation()
+    expect(screen.getByText(/建議提早抵達以利尋找車位/)).toBeInTheDocument()
+  })
+
   it('封面照片具備有意義的 alt 與尺寸屬性（避免 CLS）', () => {
     renderInvitation()
     const img = screen.getByRole('img', { name: /婚紗照/ })
