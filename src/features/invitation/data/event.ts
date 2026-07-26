@@ -19,8 +19,8 @@ export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponen
 )}&hl=zh-TW&output=embed`
 
 export const NOTES = [
-  '不收禮金，您人到就是最棒的禮物。',
-  '記得先吃個午餐墊墊胃，但別太飽 — 現場備有甜點外燴等大家。',
-  '歡迎自備環保餐具，一起對地球溫柔一點。',
+  '不收禮金，人到就是最棒的禮物。',
+  '可以保留一點胃給現場準備的點心外燴。',
+  '非常歡迎自備環保餐具。',
   '剩下的就是 — Enjoy!',
 ] as const
