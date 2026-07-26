@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import { MAPS_URL, NOTES, VENUE_ADDRESS, VENUE_NAME } from '../data/event'
 import { VenueMap } from './VenueMap'
 
-/** 標題（含新人姓名與日期橫線）。 */
+/** 標題（新人姓名 + 橫線夾住的邀請語）。 */
 export function InvitationHeading() {
   return (
     <>
@@ -17,17 +17,15 @@ export function InvitationHeading() {
           <span className="mx-2 text-brand-300">&amp;</span>
           秀慧(Yuri)
         </h1>
-        <p className="mt-3 font-body text-sm text-brand-900/70 print:mt-1 print:text-xs">
-          誠摯邀請您 共同參與我們的訂婚派對
-        </p>
       </header>
 
+      {/* 橫線僅作裝飾；窄螢幕文字會折行，故以 text-balance 讓兩行長度接近 */}
       <div className="my-6 flex items-center justify-center gap-3 print:my-3">
-        <span aria-hidden="true" className="h-px w-8 bg-brand-300" />
-        <span className="font-body text-xs uppercase tracking-[0.4em] text-brand-500 sm:text-sm print:text-[0.7rem]">
-          2026 · 09 · 26
-        </span>
-        <span aria-hidden="true" className="h-px w-8 bg-brand-300" />
+        <span aria-hidden="true" className="h-px w-6 shrink-0 bg-brand-300 sm:w-8" />
+        <p className="text-balance text-center font-body text-sm text-brand-900/70 print:text-xs">
+          在這一天，我們將以新鮮的身份和你分享喜悅
+        </p>
+        <span aria-hidden="true" className="h-px w-6 shrink-0 bg-brand-300 sm:w-8" />
       </div>
     </>
   )

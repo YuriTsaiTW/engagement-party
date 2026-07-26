@@ -21,6 +21,12 @@ describe('Invitation', () => {
     expect(headings[0]).toHaveTextContent('秀慧(Yuri)')
   })
 
+  it('標題下方顯示邀請語', () => {
+    renderInvitation()
+    expect(screen.getByText('在這一天，我們將以新鮮的身份和你分享喜悅')).toBeInTheDocument()
+    expect(screen.queryByText(/誠摯邀請您/)).not.toBeInTheDocument()
+  })
+
   it('顯示活動日期與時間', () => {
     renderInvitation()
     expect(screen.getByText('2026 年 9 月 26 日（六）')).toBeInTheDocument()
