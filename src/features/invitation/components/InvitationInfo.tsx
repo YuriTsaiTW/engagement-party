@@ -31,7 +31,7 @@ export function InvitationHeading() {
   )
 }
 
-/** 活動資訊（日期／時間／地點／注意事項）+ 地圖 + 列印用 QR Code。 */
+/** 活動資訊（日期／時間／地點／提醒事項／停車）+ 地圖 + 列印用 QR Code。 */
 export function InvitationDetails() {
   return (
     <section className="space-y-5 print:space-y-2">
@@ -61,7 +61,7 @@ export function InvitationDetails() {
         </a>
       </InfoBlock>
 
-      <InfoBlock label="注意事項">
+      <InfoBlock label="提醒事項">
         <ul className="space-y-1 font-body text-sm text-brand-900/80 print:space-y-0 print:text-[0.65rem]">
           {NOTES.map((note) => (
             <li key={note} className="flex gap-2">

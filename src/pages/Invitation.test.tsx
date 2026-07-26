@@ -40,8 +40,9 @@ describe('Invitation', () => {
     expect(screen.getByText(VENUE_ADDRESS)).toBeInTheDocument()
   })
 
-  it('列出所有注意事項', () => {
+  it('列出所有提醒事項', () => {
     renderInvitation()
+    expect(screen.getByRole('heading', { name: '提醒事項' })).toBeInTheDocument()
     for (const note of NOTES) {
       expect(screen.getByText(note)).toBeInTheDocument()
     }
