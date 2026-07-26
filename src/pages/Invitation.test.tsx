@@ -78,8 +78,11 @@ describe('Invitation', () => {
     }
   })
 
-  it('提供回首頁連結', () => {
+  it('不顯示回首頁連結與地圖下方的導航外連', () => {
     renderInvitation()
-    expect(screen.getByRole('link', { name: /回首頁/ })).toHaveAttribute('href', '/')
+    expect(screen.queryByRole('link', { name: /回首頁/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /導航/ })).not.toBeInTheDocument()
+    // 「地點」區塊的 Google 地圖外連仍保留
+    expect(screen.getByRole('link', { name: /在 Google 地圖開啟/ })).toBeInTheDocument()
   })
 })

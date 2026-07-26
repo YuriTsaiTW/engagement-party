@@ -1,6 +1,5 @@
 import { QRCodeSVG } from 'qrcode.react'
 import type { ReactNode } from 'react'
-import { Link } from 'react-router'
 import { MAPS_URL, NOTES, VENUE_ADDRESS, VENUE_NAME } from '../data/event'
 import { VenueMap } from './VenueMap'
 
@@ -84,20 +83,6 @@ export function InvitationDetails() {
 
       <PrintOnlyQrCode />
     </section>
-  )
-}
-
-/** 回首頁（列印時隱藏）。 */
-export function InvitationFooter() {
-  return (
-    <footer className="mt-10 text-center print:hidden">
-      <Link
-        to="/"
-        className="font-body text-sm text-brand-500 underline-offset-4 hover:underline focus-visible:underline"
-      >
-        ← 回首頁
-      </Link>
-    </footer>
   )
 }
 

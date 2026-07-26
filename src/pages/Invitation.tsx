@@ -1,7 +1,6 @@
 import { CoverPhoto } from '../features/invitation/components/CoverPhoto'
 import {
   InvitationDetails,
-  InvitationFooter,
   InvitationHeading,
 } from '../features/invitation/components/InvitationInfo'
 
@@ -27,7 +26,6 @@ export default function Invitation() {
       <div className="mx-auto flex w-full max-w-xl flex-col px-6 py-10 md:py-16 print:max-w-none print:px-0 print:py-0">
         <InvitationHeading />
         <InvitationDetails />
-        <InvitationFooter />
       </div>
     </main>
   )

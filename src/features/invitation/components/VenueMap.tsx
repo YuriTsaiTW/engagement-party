@@ -1,4 +1,4 @@
-import { MAPS_EMBED_URL, MAPS_URL, VENUE_NAME } from '../data/event'
+import { MAPS_EMBED_URL, VENUE_NAME } from '../data/event'
 
 /**
  * 場地位置地圖。iframe 無法列印，因此列印版改以文字地址 + QR Code 承接
@@ -23,15 +23,6 @@ export function VenueMap() {
           className="block h-72 w-full border-0 sm:h-80"
         />
       </div>
-      <a
-        href={MAPS_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 inline-flex items-center gap-1 font-body text-sm text-brand-500 underline-offset-4 hover:underline focus-visible:underline"
-      >
-        在 Google 地圖開啟導航
-        <span aria-hidden="true">→</span>
-      </a>
     </section>
   )
 }
