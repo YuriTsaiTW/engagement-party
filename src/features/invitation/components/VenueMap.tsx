@@ -9,7 +9,7 @@ export function VenueMap() {
     <section aria-labelledby="venue-map-heading" className="print:hidden">
       <h2
         id="venue-map-heading"
-        className="font-body text-[0.65rem] uppercase tracking-[0.3em] text-brand-500"
+        className="font-body text-[12px] uppercase tracking-[0.3em] text-brand-500"
       >
         場地位置
       </h2>

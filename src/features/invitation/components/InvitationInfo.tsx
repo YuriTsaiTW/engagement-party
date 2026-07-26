@@ -89,7 +89,7 @@ export function InvitationDetails() {
 function InfoBlock({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="space-y-1 print:space-y-0.5">
-      <h2 className="font-body text-[0.65rem] uppercase tracking-[0.3em] text-brand-500 print:text-[0.55rem]">
+      <h2 className="font-body text-[12px] uppercase tracking-[0.3em] text-brand-500 print:text-[0.55rem]">
         {label}
       </h2>
       <div className="space-y-1 print:space-y-0">{children}</div>
