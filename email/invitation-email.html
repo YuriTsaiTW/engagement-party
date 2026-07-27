@@ -48,14 +48,19 @@
             width="100%"
             style="max-width:600px; background-color:#ffffff; border:1px solid #ffe1e0; border-radius:12px;"
           >
-            <!-- 主視覺：婚紗照。width 屬性 + style 雙寫，Outlook 只認前者 -->
+            <!--
+              主視覺：婚紗照。width 屬性 + style 雙寫，Outlook 只認前者。
+              刻意不在 <td> 加 line-height:0 — 那會壓掉 alt 文字的行高。Gmail 有相當比例
+              的收件者會擋下外部圖片（首次來信的寄件者尤其常見），此時要讓 alt 以可讀的
+              段落呈現而不是被裁成一條。alt 的字型須寫在 <img> 上（alt 繼承 img 而非儲存格）。
+            -->
             <tr>
-              <td style="padding:0; line-height:0;">
+              <td style="padding:0;">
                 <img
                   src="https://yuritsaitw.github.io/engagement-party/email/cover.jpg"
                   alt="昱德與秀慧的婚紗照，兩人在紅磚建築的光影迴廊中"
                   width="600"
-                  style="display:block; width:100%; max-width:600px; height:auto; border:0; border-radius:12px 12px 0 0;"
+                  style="display:block; width:100%; max-width:600px; height:auto; border:0; border-radius:12px 12px 0 0; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.6; color:#680011;"
                 />
               </td>
             </tr>
@@ -197,7 +202,7 @@
                         src="https://yuritsaitw.github.io/engagement-party/email/parking.jpg"
                         alt="安億 360 空間停車資訊圖。P1：免費空地停車位置，位於光州路與安億路口附近、場地旁。P2：路邊停車格，位於安億路上，24 小時收費、每小時 20 元。P3：港濱歷史公園停車場 A 場，位於安億路西側，24 小時收費、每小時 20 元。"
                         width="552"
-                        style="display:block; width:100%; max-width:552px; height:auto; border:1px solid #ffe1e0; border-radius:6px;"
+                        style="display:block; width:100%; max-width:552px; height:auto; border:1px solid #ffe1e0; border-radius:6px; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.6; color:#680011;"
                       />
                     </td>
                   </tr>
@@ -205,7 +210,12 @@
               </td>
             </tr>
 
-            <!-- CTA：導回完整電子邀請函。用表格做按鈕，Outlook 不支援 padding on <a> -->
+            <!--
+              CTA：導回完整電子邀請函。用表格做按鈕，Outlook 不支援 padding on <a>。
+              背景色與文字色同時寫在 <td> 與 <a> 上：Gmail 手機 App 的深色模式會反轉它
+              判定為淺色的背景，若只有 td 被反轉而 a 的白字沒跟著變，按鈕會變成白字配淺底
+              而整顆消失。這是最不能失效的元素，雙寫成本為零。
+            -->
             <tr>
               <td align="center" style="padding:0 24px 32px 24px; background-color:#ffffff;">
                 <table role="presentation" cellpadding="0" cellspacing="0" border="0">
@@ -213,7 +223,7 @@
                     <td align="center" style="background-color:#c53443; border-radius:999px;">
                       <a
                         href="https://yuritsaitw.github.io/engagement-party/invitation"
-                        style="display:inline-block; padding:14px 32px; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:15px; color:#ffffff; text-decoration:none;"
+                        style="display:inline-block; padding:14px 32px; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:15px; background-color:#c53443; color:#ffffff; text-decoration:none; border-radius:999px;"
                       >
                         查看完整電子邀請函
                       </a>
