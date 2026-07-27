@@ -15,6 +15,37 @@ test('邀請函顯示標題、活動資訊與場地地圖', async ({ page }) => 
   await expect(page.locator('iframe[title="安億 360 位置地圖"]')).toBeVisible()
 })
 
+test('按住封面圖切換為結婚書約插畫，放開後還原', async ({ page }) => {
+  await page.setViewportSize(DESKTOP)
+  await page.goto('invitation')
+
+  const cover = page.getByRole('button', { name: /按住查看結婚書約插畫/ })
+  const illust = page.getByAltText(/手繪插畫/)
+
+  await expect(cover).toHaveAttribute('aria-pressed', 'false')
+  await expect(illust).toHaveCSS('opacity', '0')
+
+  // 桌機斷點載入直式插畫
+  await expect(illust).toHaveJSProperty('naturalWidth', 970)
+
+  await cover.hover()
+  await page.mouse.down()
+  await expect(cover).toHaveAttribute('aria-pressed', 'true')
+  await expect(illust).toHaveCSS('opacity', '1')
+
+  await page.mouse.up()
+  // 移到右欄：左欄仍被 hover 時 group-hover 會讓插畫持續顯示（預期行為）
+  await page.mouse.move(DESKTOP.width - 40, DESKTOP.height / 2)
+  await expect(cover).toHaveAttribute('aria-pressed', 'false')
+  await expect(illust).toHaveCSS('opacity', '0')
+})
+
+test('375px 一頁式載入橫式插畫', async ({ page }) => {
+  await page.setViewportSize(MOBILE)
+  await page.goto('invitation')
+  await expect(page.getByAltText(/手繪插畫/)).toHaveJSProperty('naturalWidth', 1500)
+})
+
 test('375px 為一頁式：封面圖在資訊上方，且無水平溢出', async ({ page }) => {
   await page.setViewportSize(MOBILE)
   await page.goto('invitation')
