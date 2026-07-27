@@ -7,8 +7,10 @@ export default function Home() {
       <h1 className="font-display text-5xl text-brand-700 sm:text-6xl">
         昱德(Lloyd) &amp; 秀慧(Yuri)
       </h1>
-      <p className="max-w-md font-body text-base text-brand-900/70">
-        歡迎來到我們的訂婚派對現場互動頁。播放音樂、跟著流程、和大家一起玩遊戲。
+      {/* 斷行固定在「時間，」之後：兩個子句各自成行，語意才不會被切斷 */}
+      <p className="max-w-xl font-body text-base leading-relaxed text-brand-900/70">
+        <span className="block">醞釀了 12 年，我們想用一個下午的時間，</span>
+        <span className="block">以新鮮的身份跟大家敘舊和分享喜悅</span>
       </p>
       <nav className="mt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-body text-sm">
         <Link
