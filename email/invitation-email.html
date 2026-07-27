@@ -1,0 +1,249 @@
+<!doctype html>
+<!--
+  訂婚派對電子邀請函（Gmail 內文版）
+
+  ⚠️ 內容為刻意寫死，並非自動同步。若 src/features/invitation/data/event.ts
+  的日期／時間／地點／提醒事項有變更，這份檔案要手動跟著改。
+  對應來源：VENUE_NAME、VENUE_ADDRESS、MAPS_URL、NOTES、PARKING_MAP_ALT。
+
+  為什麼不直接內嵌 /invitation 頁面：
+  - 該頁是 CSR 的 SPA，Gmail 剝除 <script> 後只會剩空白
+  - VenueMap 是 <iframe>，Gmail 完全移除 → 這裡改用「地址文字 + Google 地圖連結 + 停車地圖 JPG」
+  - 品牌色是 Tailwind v4 @theme 的 oklch() 自訂屬性，Gmail sanitizer 會丟掉
+    → 以下全部寫死 sRGB hex（由瀏覽器 canvas 光柵化取得的 ground truth）：
+      brand-50 #fff4f3 / brand-100 #ffe1e0 / brand-300 #ffb0b0
+      brand-500 #f8767a / brand-700 #c53443 / brand-900 #680011
+
+  實作限制與對應：
+  - 所有樣式一律 inline style=""，不使用 <style>（Gmail 貼上後 <style> 不會保留）
+  - 圖片放在 public/email/ 走「不經 hash」的穩定網址，避免每次 build 檔名變動而失效
+  - 圖片以 https 外連而非 base64，避免觸發 Gmail 約 102KB 的裁信門檻
+  - Noto Serif TC / Noto Sans TC 在 Gmail 不會載入，改用 CJK 安全字型堆疊
+
+  使用方式：用瀏覽器開啟這個檔案 → 全選（⌘A）→ 複製（⌘C）→ 貼進 Gmail 撰寫視窗。
+  送出前務必先寄一封給自己，並在桌機 Gmail 與手機 App 各確認一次。
+-->
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>昱德(Lloyd) &amp; 秀慧(Yuri) 訂婚派對邀請函</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#fff4f3;">
+    <!-- 外層置中容器：Gmail 對 max-width 支援良好，桌機收斂在 600px -->
+    <table
+      role="presentation"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      width="100%"
+      style="background-color:#fff4f3; margin:0; padding:0;"
+    >
+      <tr>
+        <td align="center" style="padding:24px 12px;">
+          <table
+            role="presentation"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            width="100%"
+            style="max-width:600px; background-color:#ffffff; border:1px solid #ffe1e0; border-radius:12px;"
+          >
+            <!-- 主視覺：婚紗照。width 屬性 + style 雙寫，Outlook 只認前者 -->
+            <tr>
+              <td style="padding:0; line-height:0;">
+                <img
+                  src="https://yuritsaitw.github.io/engagement-party/email/cover.jpg"
+                  alt="昱德與秀慧的婚紗照，兩人在紅磚建築的光影迴廊中"
+                  width="600"
+                  style="display:block; width:100%; max-width:600px; height:auto; border:0; border-radius:12px 12px 0 0;"
+                />
+              </td>
+            </tr>
+
+            <!-- 標題 -->
+            <tr>
+              <td align="center" style="padding:32px 24px 0 24px; background-color:#ffffff;">
+                <p
+                  style="margin:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:#f8767a;"
+                >
+                  SAVE THE DATE
+                </p>
+                <h1
+                  style="margin:16px 0 0 0; font-family:'Songti TC', 'Noto Serif TC', 'PingFang TC', Georgia, serif; font-size:30px; line-height:1.3; font-weight:normal; color:#c53443;"
+                >
+                  昱德(Lloyd)<span style="color:#ffb0b0;">&nbsp;&amp;&nbsp;</span>秀慧(Yuri)
+                </h1>
+                <p
+                  style="margin:20px 0 0 0; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.7; color:#680011;"
+                >
+                  在這一天，我們將以新鮮的身份和你分享喜悅
+                </p>
+                <!-- 裝飾細線 -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:20px auto 0 auto;">
+                  <tr>
+                    <td style="width:48px; height:1px; background-color:#ffb0b0; line-height:1px; font-size:0;">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- 活動資訊 -->
+            <tr>
+              <td style="padding:28px 24px 0 24px; background-color:#ffffff;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <!-- 日期 -->
+                  <tr>
+                    <td style="padding-bottom:20px;">
+                      <p
+                        style="margin:0 0 6px 0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f8767a;"
+                      >
+                        日期
+                      </p>
+                      <p
+                        style="margin:0; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:16px; line-height:1.6; color:#680011;"
+                      >
+                        2026 年 9 月 26 日（六）
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- 時間 -->
+                  <tr>
+                    <td style="padding-bottom:20px;">
+                      <p
+                        style="margin:0 0 6px 0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f8767a;"
+                      >
+                        時間
+                      </p>
+                      <p
+                        style="margin:0; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:16px; line-height:1.6; color:#680011;"
+                      >
+                        13:30 開放入場<span style="color:#ffb0b0;">&nbsp;·&nbsp;</span>14:00 活動開始
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- 地點 -->
+                  <tr>
+                    <td style="padding-bottom:20px;">
+                      <p
+                        style="margin:0 0 6px 0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f8767a;"
+                      >
+                        地點
+                      </p>
+                      <p
+                        style="margin:0; font-family:'Songti TC', 'Noto Serif TC', 'PingFang TC', Georgia, serif; font-size:18px; line-height:1.5; color:#c53443;"
+                      >
+                        安億 360
+                      </p>
+                      <p
+                        style="margin:4px 0 0 0; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.6; color:#680011;"
+                      >
+                        708 臺南市安平區億載里安億路 360 號 3 樓
+                      </p>
+                      <p style="margin:8px 0 0 0;">
+                        <a
+                          href="https://maps.app.goo.gl/t8W8ENv32LUmqZzo9"
+                          style="font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; color:#f8767a; text-decoration:underline;"
+                        >
+                          在 Google 地圖開啟 &rarr;
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- 提醒事項：Gmail 對 <ul> 縮排處理不一，改用表格逐列排 -->
+                  <tr>
+                    <td style="padding-bottom:20px;">
+                      <p
+                        style="margin:0 0 6px 0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f8767a;"
+                      >
+                        提醒事項
+                      </p>
+                      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                          <td valign="top" style="width:14px; font-family:Arial, sans-serif; font-size:14px; line-height:1.8; color:#ffb0b0;">·</td>
+                          <td style="font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.8; color:#680011;">
+                            不收禮金，人到就是最棒的禮物。
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" style="width:14px; font-family:Arial, sans-serif; font-size:14px; line-height:1.8; color:#ffb0b0;">·</td>
+                          <td style="font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.8; color:#680011;">
+                            可以保留一點胃給現場準備的點心外燴。
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" style="width:14px; font-family:Arial, sans-serif; font-size:14px; line-height:1.8; color:#ffb0b0;">·</td>
+                          <td style="font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.8; color:#680011;">
+                            非常歡迎自備環保餐具。
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" style="width:14px; font-family:Arial, sans-serif; font-size:14px; line-height:1.8; color:#ffb0b0;">·</td>
+                          <td style="font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:14px; line-height:1.8; color:#680011;">
+                            剩下的就是 — Enjoy!
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- 停車資訊：圖內文字輔助技術讀不到，三個停車點與收費方式都寫進 alt -->
+                  <tr>
+                    <td style="padding-bottom:24px;">
+                      <p
+                        style="margin:0 0 8px 0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f8767a;"
+                      >
+                        停車資訊
+                      </p>
+                      <img
+                        src="https://yuritsaitw.github.io/engagement-party/email/parking.jpg"
+                        alt="安億 360 空間停車資訊圖。P1：免費空地停車位置，位於光州路與安億路口附近、場地旁。P2：路邊停車格，位於安億路上，24 小時收費、每小時 20 元。P3：港濱歷史公園停車場 A 場，位於安億路西側，24 小時收費、每小時 20 元。"
+                        width="552"
+                        style="display:block; width:100%; max-width:552px; height:auto; border:1px solid #ffe1e0; border-radius:6px;"
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA：導回完整電子邀請函。用表格做按鈕，Outlook 不支援 padding on <a> -->
+            <tr>
+              <td align="center" style="padding:0 24px 32px 24px; background-color:#ffffff;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td align="center" style="background-color:#c53443; border-radius:999px;">
+                      <a
+                        href="https://yuritsaitw.github.io/engagement-party/invitation"
+                        style="display:inline-block; padding:14px 32px; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:15px; color:#ffffff; text-decoration:none;"
+                      >
+                        查看完整電子邀請函
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+                <p
+                  style="margin:14px 0 0 0; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:12px; line-height:1.6; color:#680011;"
+                >
+                  含場地地圖與最新資訊
+                </p>
+              </td>
+            </tr>
+
+            <!-- 頁尾 -->
+            <tr>
+              <td
+                align="center"
+                style="padding:20px 24px; background-color:#fff4f3; border-top:1px solid #ffe1e0; border-radius:0 0 12px 12px;"
+              >
+                <p
+                  style="margin:0; font-family:'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', Arial, sans-serif; font-size:12px; line-height:1.6; color:#680011;"
+                >
+                  期待與你見面 &middot; 昱德 &amp; 秀慧
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
