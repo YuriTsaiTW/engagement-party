@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
-import { NOTES, VENUE_ADDRESS, VENUE_NAME } from '../features/invitation/data/event'
+import { NOTES, PARKING_SPOTS, VENUE_ADDRESS, VENUE_NAME } from '../features/invitation/data/event'
 import Invitation from './Invitation'
 
 function renderInvitation() {
@@ -48,9 +48,18 @@ describe('Invitation', () => {
     }
   })
 
-  it('保留停車提醒（沿用改版前的來賓提示）', () => {
+  it('停車資訊列出各停車點並附上場地提供的停車地圖', () => {
     renderInvitation()
-    expect(screen.getByText(/建議提早抵達以利尋找車位/)).toBeInTheDocument()
+    for (const spot of PARKING_SPOTS) {
+      expect(screen.getByText(spot.name)).toBeInTheDocument()
+    }
+    // 收費資訊圖片讀不到，需以文字並存
+    expect(screen.getAllByText(/每小時 20 元/).length).toBeGreaterThan(0)
+
+    const map = screen.getByRole('img', { name: /停車資訊圖/ })
+    expect(map).toHaveAttribute('width')
+    expect(map).toHaveAttribute('height')
+    expect(map).toHaveAttribute('loading', 'lazy')
   })
 
   it('封面照片具備有意義的 alt 與尺寸屬性（避免 CLS）', () => {

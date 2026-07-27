@@ -19,6 +19,16 @@ export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponen
   VENUE_QUERY,
 )}&hl=zh-TW&output=embed`
 
+/**
+ * 停車選項（取自場地提供的停車資訊圖）。
+ * 圖片本身是 JPEG，輔助技術讀不到裡面的文字，故同步以文字列出。
+ */
+export const PARKING_SPOTS = [
+  { id: 'P1', name: '免費空地停車位置', detail: null },
+  { id: 'P2', name: '路邊停車格', detail: '24 小時收費，每小時 20 元' },
+  { id: 'P3', name: '港濱歷史公園停車場 A 場', detail: '24 小時收費，每小時 20 元' },
+] as const
+
 export const NOTES = [
   '不收禮金，人到就是最棒的禮物。',
   '可以保留一點胃給現場準備的點心外燴。',
