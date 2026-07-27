@@ -20,14 +20,13 @@ export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponen
 )}&hl=zh-TW&output=embed`
 
 /**
- * 停車選項（取自場地提供的停車資訊圖）。
- * 圖片本身是 JPEG，輔助技術讀不到裡面的文字，故同步以文字列出。
+ * 停車資訊圖的替代文字。頁面上只放圖，圖內文字輔助技術讀不到，
+ * 因此三個停車點與收費方式都必須寫進 alt。
  */
-export const PARKING_SPOTS = [
-  { id: 'P1', name: '免費空地停車位置', detail: null },
-  { id: 'P2', name: '路邊停車格', detail: '24 小時收費，每小時 20 元' },
-  { id: 'P3', name: '港濱歷史公園停車場 A 場', detail: '24 小時收費，每小時 20 元' },
-] as const
+export const PARKING_MAP_ALT =
+  '安億 360 空間停車資訊圖。P1：免費空地停車位置，位於光州路與安億路口附近、場地旁。' +
+  'P2：路邊停車格，位於安億路上，24 小時收費、每小時 20 元。' +
+  'P3：港濱歷史公園停車場 A 場，位於安億路西側，24 小時收費、每小時 20 元。'
 
 export const NOTES = [
   '不收禮金，人到就是最棒的禮物。',

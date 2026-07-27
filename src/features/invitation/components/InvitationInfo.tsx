@@ -1,7 +1,7 @@
 import { QRCodeSVG } from 'qrcode.react'
 import type { ReactNode } from 'react'
 import parkingMap from '../assets/parking-map.jpg'
-import { MAPS_URL, NOTES, PARKING_SPOTS, VENUE_ADDRESS, VENUE_NAME } from '../data/event'
+import { MAPS_URL, NOTES, PARKING_MAP_ALT, VENUE_ADDRESS, VENUE_NAME } from '../data/event'
 import { VenueMap } from './VenueMap'
 
 /** 標題（新人姓名 + 橫線夾住的邀請語）。 */
@@ -75,23 +75,10 @@ export function InvitationDetails() {
       </InfoBlock>
 
       <InfoBlock label="停車資訊">
-        {/* 圖內文字輔助技術讀不到，因此下方同步以文字列出各停車點 */}
-        <ul className="space-y-1 font-body text-sm text-brand-900/80 print:space-y-0 print:text-[0.65rem]">
-          {PARKING_SPOTS.map((spot) => (
-            <li key={spot.id} className="flex gap-2">
-              <span className="shrink-0 font-medium text-brand-500">{spot.id}</span>
-              <span>
-                {spot.name}
-                {spot.detail && <span className="text-brand-900/60">（{spot.detail}）</span>}
-              </span>
-            </li>
-          ))}
-        </ul>
-
-        <figure className="mt-3 overflow-hidden rounded-md border border-brand-100 print:mt-1 print:rounded-sm">
+        <figure className="overflow-hidden rounded-md border border-brand-100 print:rounded-sm">
           <img
             src={parkingMap}
-            alt="安億 360 空間停車資訊圖：P1 免費空地停車位置在光州路與安億路口附近，P2 路邊停車格與 P3 港濱歷史公園停車場 A 場位於安億路沿線"
+            alt={PARKING_MAP_ALT}
             width={1600}
             height={1066}
             loading="lazy"
