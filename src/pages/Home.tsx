@@ -20,10 +20,16 @@ export default function Home() {
           邀請函 →
         </Link>
         <Link
-          to="/memoir"
+          to="/announcement"
           className="text-brand-500 underline-offset-4 hover:underline focus-visible:underline"
         >
-          成長回顧與感謝 →
+          喜餅小卡 →
+        </Link>
+        <Link
+          to="/group-photo-pose"
+          className="text-brand-500 underline-offset-4 hover:underline focus-visible:underline"
+        >
+          合照姿勢 →
         </Link>
       </nav>
     </main>
