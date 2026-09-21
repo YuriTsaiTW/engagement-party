@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import App from './App'
 import Announcement from './pages/Announcement'
+import GroupPhotoPose from './pages/GroupPhotoPose'
 import Home from './pages/Home'
 import Invitation from './pages/Invitation'
 import Memoir from './pages/Memoir'
@@ -16,6 +17,7 @@ export const router = createBrowserRouter(
         { path: 'announcement', element: <Announcement /> },
         { path: 'invitation', element: <Invitation /> },
         { path: 'memoir', element: <Memoir /> },
+        { path: 'group-photo-pose', element: <GroupPhotoPose /> },
         { path: '*', element: <NotFound /> },
       ],
     },
