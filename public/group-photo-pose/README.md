@@ -59,7 +59,7 @@
 - `3/01.jpg`：吉伊卡哇 節奏感小隊 — https://www.twdreamlife.com/wp-content/uploads/2026/09/%E7%AF%80%E5%A5%8F%E6%84%9F%E5%B0%8F%E9%9A%8A.jpg
 - `3/03.jpg`：JOJO 監獄風雲 — https://cdn.ttv.com.tw/summernotefiles/News/31974362-7743-438d-a3f9-49ae8bf1514b.jpg
 - `3/04.webp`：超級瑪利歐銀河電影版 — https://media.nownews.com/nn_media/thumbnail/2026/03/1774712954064-bb11e0ff8e86424f8d02a84eaa8f9298-925x663.webp?unShow=false
-- `4/01.jpg`：埃及豪華旅遊團 — https://i0.wp.com/static.jojowiki.com/images/4/40/latest/20191015215603/Letsgo.jpg
+- `4/01.jpg`：JOJO 埃及奢華旅遊團 — https://i0.wp.com/static.jojowiki.com/images/4/40/latest/20191015215603/Letsgo.jpg
 - `4/02.jpg`：黃金神威 斯千卡 — https://pbs.twimg.com/media/EkIOSOzUwAEDbYw.jpg
 - `4/03.png`：排球少年 — https://d2k0ho18x753k7.cloudfront.net/upload/img_up/3176f/648/bf0ce1c27b1112acb08a7889c0893d49.png
 - `4/04.jpg`：為美好的世界獻上祝福！ — https://p2.bahamut.com.tw/B/2KU/64/fc526f81d0eb81cd090b3ec31d1d1y05.JPG
@@ -99,7 +99,7 @@
 | 3 | 吉伊卡哇 節奏感小隊 | 節奏感小隊.mp3 | `3/01.mp3` |
 | 3 | JOJO 監獄風雲 | jojo 石之海.mp3 | `3/03.mp3` |
 | 3 | 超級瑪利歐銀河電影版 | 耀西.mp3 | `3/04.mp3` |
-| 4 | 埃及豪華旅遊團 | jojo 埃及旅行團.mp3 | `4/01.mp3` |
+| 4 | JOJO 埃及奢華旅遊團 | jojo 埃及旅行團.mp3 | `4/01.mp3` |
 | 4 | 黃金神威 斯千卡 | 黃金神威.mp3 | `4/02.mp3` |
 | 4 | 排球少年 | 排球少年.mp3 | `4/03.mp3` |
 | 4 | 為美好的世界獻上祝福！ | 為美好世界獻上祝福.mp3 | `4/04.mp3` |
