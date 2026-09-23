@@ -102,6 +102,7 @@ function PoseResult({
             ref={audio}
             src={assetUrl(pose.audio)}
             preload="auto"
+            loop={false}
             onError={() => setAudioMessage('音檔無法載入，請確認素材檔案。')}
           />
           <p role="status" className="text-sm text-brand-900/70">

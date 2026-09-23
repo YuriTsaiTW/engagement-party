@@ -4,63 +4,56 @@
     "people": 3,
     "title": "吉伊卡哇 節奏感小隊",
     "image": "3/01.jpg",
-    "audio": ""
-  },
-  {
-    "id": "3-02",
-    "people": 3,
-    "title": "雞鬥士",
-    "image": "3/02.jpg",
-    "audio": ""
+    "audio": "3/01.mp3"
   },
   {
     "id": "3-03",
     "people": 3,
-    "title": "JOJO 石之海",
+    "title": "JOJO 監獄風雲",
     "image": "3/03.jpg",
-    "audio": ""
+    "audio": "3/03.mp3"
   },
   {
     "id": "3-04",
     "people": 3,
     "title": "超級瑪利歐銀河電影版",
     "image": "3/04.webp",
-    "audio": ""
+    "audio": "3/04.mp3"
   },
   {
     "id": "4-01",
     "people": 4,
-    "title": "JOJO 星塵遠征軍",
+    "title": "埃及豪華旅遊團",
     "image": "4/01.jpg",
-    "audio": ""
+    "audio": "4/01.mp3"
   },
   {
     "id": "4-02",
     "people": 4,
     "title": "黃金神威 斯千卡",
     "image": "4/02.jpg",
-    "audio": ""
+    "audio": "4/02.mp3"
   },
   {
     "id": "4-03",
     "people": 4,
     "title": "排球少年",
     "image": "4/03.png",
-    "audio": ""
+    "audio": "4/03.mp3"
   },
   {
     "id": "4-04",
     "people": 4,
     "title": "為美好的世界獻上祝福！",
     "image": "4/04.jpg",
-    "audio": ""
+    "audio": "4/04.mp3"
   },
   {
     "id": "4-05",
     "people": 4,
     "title": "路人超能 100",
     "image": "4/05.jpg",
-    "audio": "",
+    "audio": "4/05.mp3",
     "crop": {
       "width": 400,
       "height": 424,
@@ -72,161 +65,154 @@
     "people": 4,
     "title": "BEASTARS",
     "image": "4/06.jpg",
-    "audio": ""
+    "audio": "4/06.mp3"
   },
   {
     "id": "4-07",
     "people": 4,
     "title": "火影忍者",
     "image": "4/07-v2.jpg",
-    "audio": ""
+    "audio": "4/07.mp3"
   },
   {
     "id": "4-08",
     "people": 4,
     "title": "獵人",
     "image": "4/08-v2.jpg",
-    "audio": ""
+    "audio": "4/08.mp3"
   },
   {
     "id": "4-09",
     "people": 4,
     "title": "東島丹三郎想成為假面騎士",
     "image": "4/09.webp",
-    "audio": ""
+    "audio": "4/09.mp3"
   },
   {
     "id": "4-10",
     "people": 4,
     "title": "迷宮飯",
     "image": "4/10.jpg",
-    "audio": ""
+    "audio": "4/10.mp3"
   },
   {
     "id": "4-11",
     "people": 4,
     "title": "寶可夢 火箭隊",
     "image": "4/11.jpg",
-    "audio": ""
+    "audio": "4/11.mp3"
+  },
+  {
+    "id": "4-12",
+    "people": 4,
+    "title": "在沖繩喜歡上的女孩方言講得太過令人困擾",
+    "image": "4/12.jpg",
+    "audio": "4/12.mp3"
   },
   {
     "id": "5-01",
     "people": 5,
     "title": "輝夜姬想讓人告白",
     "image": "5/01.jpg",
-    "audio": ""
+    "audio": "5/01.mp3"
   },
   {
     "id": "5-02",
     "people": 5,
     "title": "搖曳露營",
     "image": "5/02.jpg",
-    "audio": ""
+    "audio": "5/02.mp3"
   },
   {
     "id": "5-03",
     "people": 5,
     "title": "七龍珠 基紐特攻隊",
     "image": "5/03.jpg",
-    "audio": ""
-  },
-  {
-    "id": "5-04",
-    "people": 5,
-    "title": "未聞花名",
-    "image": "5/04.jpg",
-    "audio": ""
-  },
-  {
-    "id": "5-05",
-    "people": 5,
-    "title": "尼古喵喵",
-    "image": "5/05.jpg",
-    "audio": ""
+    "audio": "5/03.mp3"
   },
   {
     "id": "5-06",
     "people": 5,
     "title": "我與機器子",
     "image": "5/06.webp",
-    "audio": ""
+    "audio": "5/06.mp3"
   },
   {
     "id": "5-07",
     "people": 5,
     "title": "名偵探柯南 少年偵探團",
     "image": "5/07.jpg",
-    "audio": ""
+    "audio": "5/07.mp3"
   },
   {
     "id": "5-08",
     "people": 5,
     "title": "派對咖孔明",
     "image": "5/08.png",
-    "audio": ""
+    "audio": "5/08.mp3"
   },
   {
     "id": "6-01",
     "people": 6,
-    "title": "JOJO 黃金之風",
+    "title": "JOJO 義大利牛郎團",
     "image": "6/01.jpg",
-    "audio": ""
+    "audio": "6/01.mp3"
   },
   {
     "id": "6-02",
     "people": 6,
     "title": "失憶投捕",
     "image": "6/02.webp",
-    "audio": ""
+    "audio": "6/02.mp3"
   },
   {
     "id": "6-04",
     "people": 6,
     "title": "中華一番",
     "image": "6/04.png",
-    "audio": ""
+    "audio": "6/04.mp3"
   },
   {
     "id": "6-05",
     "people": 6,
     "title": "蠟筆小新 春日部防衛隊",
     "image": "6/05.jpg",
-    "audio": ""
+    "audio": "6/05.mp3"
   },
   {
     "id": "6-06",
     "people": 6,
-    "title": "黃金神威",
+    "title": "大日本帝國陸軍第七馬戲團",
     "image": "6/06.jpg",
-    "audio": ""
+    "audio": "6/06.mp3"
   },
   {
     "id": "7-01",
     "people": 7,
     "title": "齊木楠雄的Ψ難",
     "image": "7/01.jpg",
-    "audio": ""
+    "audio": "7/01.mp3"
   },
   {
     "id": "7-02",
     "people": 7,
     "title": "工作細胞",
     "image": "7/02.webp",
-    "audio": ""
+    "audio": "7/02.mp3"
   },
   {
     "id": "7-03",
     "people": 7,
     "title": "佐賀偶像是傳奇",
     "image": "7/03.jpg",
-    "audio": ""
+    "audio": "7/03.mp3"
   },
   {
     "id": "7-04",
     "people": 7,
     "title": "數碼寶貝",
     "image": "7/04.jpg",
-    "audio": "",
+    "audio": "7/04.mp3",
     "crop": {
       "width": 375,
       "height": 246,
@@ -237,29 +223,22 @@
   {
     "id": "8-01",
     "people": 8,
-    "title": "進擊的巨人 心臟莎莎給油",
+    "title": "進擊的巨人 心臓を捧げよ",
     "image": "8/01.jpg",
-    "audio": ""
+    "audio": "8/01.mp3"
   },
   {
     "id": "8-02",
     "people": 8,
-    "title": "JOJO 不滅鑽石",
+    "title": "JOJO 日本哥譚市",
     "image": "8/02.jpg",
-    "audio": ""
+    "audio": "8/02.mp3"
   },
   {
     "id": "8-03",
     "people": 8,
     "title": "相反的你和我",
     "image": "8/03.jpg",
-    "audio": ""
-  },
-  {
-    "id": "8-04",
-    "people": 8,
-    "title": "吉伊卡哇 人魚島的秘密",
-    "image": "8/04.webp",
-    "audio": ""
+    "audio": "8/03.mp3"
   }
 ]

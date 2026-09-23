@@ -28,8 +28,4 @@ export const kidsPoseNotes: Record<string, { reason: string; tip: string }> = {
     reason: '兒童冒險隊伍與可愛夥伴，站姿、招手和比讚容易模仿。',
     tip: '模仿小隊員，招手、比讚，一起看鏡頭！',
   },
-  '8-04': {
-    reason: '八隻可愛角色，重點在表情與前後排列，動作要求低。',
-    tip: '前後排站好，讓每張臉都露出來，再做一個可愛的表情！',
-  },
 }

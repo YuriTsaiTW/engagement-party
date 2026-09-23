@@ -6,7 +6,7 @@ import GroupPhotoPose from './GroupPhotoPose'
 vi.mock('../features/group-photo-pose/catalog', async (importOriginal) => ({
   ...(await importOriginal<typeof import('../features/group-photo-pose/catalog')>()),
   poses: [
-    { id: '3-01', people: 3, title: '比愛心', image: '3/01.jpg', audio: '3/01.mp3' },
+    { id: '3-04', people: 3, title: '比愛心', image: '3/04.jpg', audio: '3/04.mp3' },
     { id: '3-02', people: 3, title: '一起跳', image: '3/02.jpg', audio: '3/02.mp3' },
     { id: '4-01', people: 4, title: '四人合照', image: '4/01.jpg', audio: '' },
   ],
@@ -37,7 +37,7 @@ describe('合照抽選', () => {
     fireEvent.click(screen.getByRole('button', { name: '查看 3 人姿勢：比愛心' }))
     expect(screen.getByRole('img', { name: '比愛心' })).toBeVisible()
     expect(screen.queryByRole('button', { name: '略過' })).not.toBeInTheDocument()
-    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-01'])
+    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-04'])
     fireEvent.click(screen.getByRole('button', { name: '返回素材牆' }))
     expect(screen.getByRole('button', { name: '查看 3 人姿勢：比愛心' })).toHaveFocus()
     expect(HTMLMediaElement.prototype.pause).toHaveBeenCalled()
@@ -66,25 +66,27 @@ describe('合照抽選', () => {
     chooseThree()
     fireEvent.click(screen.getByRole('button', { name: '略過' }))
     expect(screen.getByRole('img')).toHaveAttribute('alt', '比愛心')
-    expect(screen.getByText('並排站好，小手放胸前，一起做可愛的表情！')).toBeVisible()
+    expect(screen.getByText('雙腳站穩，選一個舉手或抱胸的姿勢，不用踩椅子喔！')).toBeVisible()
     fireEvent.click(screen.getByRole('button', { name: '重新開始' }))
     expect(screen.getByRole('heading', { name: '小朋友區' })).toBeVisible()
     fireEvent.click(screen.getByRole('button', { name: '返回全部姿勢' }))
     chooseThree()
     fireEvent.click(screen.getByRole('button', { name: '略過' }))
     expect(screen.getByRole('img')).toHaveAttribute('alt', '一起跳')
-    expect(screen.queryByText('並排站好，小手放胸前，一起做可愛的表情！')).not.toBeInTheDocument()
+    expect(
+      screen.queryByText('雙腳站穩，選一個舉手或抱胸的姿勢，不用踩椅子喔！'),
+    ).not.toBeInTheDocument()
   })
 
   it('小朋友區抽完後只重置該人數的精選紀錄，保留一般素材與其他人數', () => {
-    sessionStorage.setItem(historyKey, JSON.stringify(['3-01', '3-02', '4-01']))
+    sessionStorage.setItem(historyKey, JSON.stringify(['3-04', '3-02', '4-01']))
     render(<GroupPhotoPose />)
     fireEvent.click(screen.getByRole('button', { name: '小朋友區' }))
     chooseThree()
-    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-01', '3-02', '4-01'])
+    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-04', '3-02', '4-01'])
     fireEvent.click(screen.getByRole('button', { name: '略過' }))
     expect(screen.getByRole('img')).toHaveAttribute('alt', '比愛心')
-    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-02', '4-01', '3-01'])
+    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-02', '4-01', '3-04'])
   })
 
   it('動畫結束才記錄結果，重新開始與重新掛載保留紀錄，一輪內不重複', () => {
@@ -95,7 +97,12 @@ describe('合照抽選', () => {
       vi.advanceTimersByTime(1800)
     })
     const first = screen.getByRole('img').getAttribute('alt')
-    expect(HTMLMediaElement.prototype.play).toHaveBeenCalled()
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1)
+    const audio = view.container.querySelector('audio')
+    if (!audio) throw new Error('Missing audio')
+    expect(audio.loop).toBe(false)
+    fireEvent.ended(audio)
+    expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1)
     fireEvent.click(screen.getByRole('button', { name: '重新開始' }))
     expect(HTMLMediaElement.prototype.pause).toHaveBeenCalled()
     view.unmount()
@@ -114,19 +121,19 @@ describe('合照抽選', () => {
   })
 
   it('抽完後從全部素材開始新一輪，只重置該人數的紀錄', () => {
-    sessionStorage.setItem(historyKey, JSON.stringify(['3-01', '3-02', '4-01']))
+    sessionStorage.setItem(historyKey, JSON.stringify(['3-04', '3-02', '4-01']))
     vi.spyOn(Math, 'random').mockReturnValue(0)
     render(<GroupPhotoPose />)
     chooseThree()
-    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-01', '3-02', '4-01'])
+    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['3-04', '3-02', '4-01'])
     fireEvent.click(screen.getByRole('button', { name: '略過' }))
     expect(screen.getByRole('img')).toHaveAttribute('alt', '比愛心')
-    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['4-01', '3-01'])
+    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['4-01', '3-04'])
     fireEvent.click(screen.getByRole('button', { name: '重新開始' }))
     chooseThree()
     fireEvent.click(screen.getByRole('button', { name: '略過' }))
     expect(screen.getByRole('img')).toHaveAttribute('alt', '一起跳')
-    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['4-01', '3-01', '3-02'])
+    expect(JSON.parse(sessionStorage.getItem(historyKey) ?? '[]')).toEqual(['4-01', '3-04', '3-02'])
   })
 
   it('尚未提供音檔仍可揭曉圖片，不建立音訊或顯示播放按鈕', () => {
