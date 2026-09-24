@@ -14,9 +14,9 @@
 
 對應檔案為 `public/group-photo-pose/3/new.jpg` 與 `public/group-photo-pose/3/new.mp3`。圖片建議 JPG、PNG 或 WebP；音檔建議 MP3。圖片預設完整顯示。`4-05` 另用 `crop` 設定，讓頁面只顯示原圖左側黑白漫畫（400 × 424）；`7-04` 只顯示下方隊員（原圖 y=287 起，375 × 246）；素材牆與大圖共用裁切設定，原始圖片檔案保留。
 
-目前共有 33 組可抽選素材：3 人 3 組、4 人 12 組、5 人 6 組、6 人 5 組、7 人 4 組、8 人 3 組。已移除的素材不重用其 ID。
+目前共有 32 組可抽選素材：3 人 3 組、4 人 12 組、5 人 5 組、6 人 5 組、7 人 4 組、8 人 3 組。已移除的素材不重用其 ID。
 
-標題與圖片填妥即可進入抽選；音檔選填，尚未提供時保持 `"audio": ""`，不會播放音訊或顯示播放按鈕。目前 33 組素材皆已配對音檔。缺少標題或圖片的項目不會抽到。所有卡片只顯示人數，不顯示狀態小字。
+標題與圖片填妥即可進入抽選；音檔選填，尚未提供時保持 `"audio": ""`，不會播放音訊或顯示播放按鈕。目前 32 組素材皆已配對音檔。缺少標題或圖片的項目不會抽到。所有卡片只顯示人數，不顯示狀態小字。
 
 `id` 是不重複紀錄的依據，必須唯一且保持穩定，不要只因修改標題而更換。
 
@@ -72,7 +72,6 @@
 - `5/01.jpg`：輝夜姬想讓人告白 — https://i.kfs.io/playlist/global/73540184v2/cropresize/600x600.jpg
 - `5/02.jpg`：搖曳露營 — https://img.4gamers.com.tw/news-image/736d3fc8-7730-487c-9581-16e500c6f111.jpg
 - `5/03.jpg`：七龍珠 基紐特攻隊 — https://truth.bahamut.com.tw/s01/201901/ca9a0b88f8055a811893f088ba15f07a.JPG
-- `5/06.webp`：我與機器子 — https://www.ofiii.com/api/image?src=https%3A%2F%2Fp-cdnstatic.svc.litv.tv%2Fpics%2F80333-000000-696095.jpg&resize=%7B%22width%22%3A640%2C%22height%22%3A360%2C%22fit%22%3A%22contain%22%2C%22position%22%3A%22centre%22%2C%22background%22%3A%7B%22r%22%3A0%2C%22g%22%3A0%2C%22b%22%3A0%2C%22alpha%22%3A1%7D%7D&removeAlpha=true
 - `6/01.jpg`：JOJO 義大利牛郎團 — https://p2.bahamut.com.tw/B/2KU/78/132119f2126dde48839c2163a2119q65.JPG
 - `6/02.webp`：失憶投捕 — https://img.vocus.cc/ub0rBHt8-LIke-wCLHOn_QUVR8eiUe6Krr7PJ4Udsow/w:740/f:webp/plain/https://images.vocus.cc/e7e96a91-5966-47ca-9824-8ce280f569a3.jpg
 - `7/01.jpg`：齊木楠雄的Ψ難 — https://pieayu.wordpress.com/wp-content/uploads/2018/01/saikikusuo2.jpg
@@ -86,7 +85,7 @@
 - `5/08.png`：派對咖孔明 — https://static.popdaily.com.tw/u/202207/751aa3d0-a0fc-4580-8168-6a2d2adec4e0.png
 - `6/04.png`：中華一番 — https://i.imgur.com/8hdp2Y2.png
 - `6/05.jpg`：蠟筆小新 春日部防衛隊 — https://img.toy-people.com/member/167962731112.jpg
-- `6/06.jpg`：大日本帝國陸軍第七馬戲團 — https://i.imgur.com/L1wwYhY.jpg
+- `6/06.jpg`：黃金神威 陸軍第七馬戲團 — https://i.imgur.com/L1wwYhY.jpg
 - `7/04.jpg`：數碼寶貝 — https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72w8wmSmtaucCcyXPirWF5ADHijvPlGlXkXw-b4OT3W9tZP3K70ZfHQdm&s=10
 - `4/12.jpg`：在沖繩喜歡上的女孩方言講得太過令人困擾 — https://image.tmdb.org/t/p/original/k6XhgD7ae9dsOJ5GiGvejdn3gxy.jpg
 
@@ -114,14 +113,13 @@
 | 5 | 輝夜姬想讓人告白 | 輝夜想讓人告白.mp3 | `5/01.mp3` |
 | 5 | 搖曳露營 | 搖曳露營.mp3 | `5/02.mp3` |
 | 5 | 七龍珠 基紐特攻隊 | 七龍珠.mp3 | `5/03.mp3` |
-| 5 | 我與機器子 | 我與機器子.mp3 | `5/06.mp3` |
 | 5 | 名偵探柯南 少年偵探團 | 名偵探柯南.mp3 | `5/07.mp3` |
 | 5 | 派對咖孔明 | 派對咖孔明.mp3 | `5/08.mp3` |
 | 6 | JOJO 義大利牛郎團 | jojo 黃金之風.mp3 | `6/01.mp3` |
 | 6 | 失憶投捕 | 失憶投捕.mp3 | `6/02.mp3` |
 | 6 | 中華一番 | 中華一番.mp3 | `6/04.mp3` |
 | 6 | 蠟筆小新 春日部防衛隊 | 蠟筆小新.mp3 | `6/05.mp3` |
-| 6 | 大日本帝國陸軍第七馬戲團 | 黃金神威2.mp3 | `6/06.mp3` |
+| 6 | 黃金神威 陸軍第七馬戲團 | 黃金神威2.mp3 | `6/06.mp3` |
 | 7 | 齊木楠雄的Ψ難 | 斉木楠雄のΨ難.mp3 | `7/01.mp3` |
 | 7 | 工作細胞 | 工作細胞.mp3 | `7/02.mp3` |
 | 7 | 佐賀偶像是傳奇 | 佐賀偶像是傳奇.mp3 | `7/03.mp3` |
