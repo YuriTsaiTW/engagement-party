@@ -21,13 +21,6 @@
     "audio": "3/04.mp3"
   },
   {
-    "id": "4-01",
-    "people": 4,
-    "title": "JOJO 埃及奢華旅遊團",
-    "image": "4/01.jpg",
-    "audio": "4/01.mp3"
-  },
-  {
     "id": "4-02",
     "people": 4,
     "title": "黃金神威 斯千卡",
@@ -108,6 +101,13 @@
     "title": "在沖繩喜歡上的女孩方言講得太過令人困擾",
     "image": "4/12.jpg",
     "audio": "4/12.mp3"
+  },
+  {
+    "id": "4-01",
+    "people": 5,
+    "title": "JOJO 埃及奢華旅遊團",
+    "image": "5/jojo-egypt.jpg",
+    "audio": "4/01.mp3"
   },
   {
     "id": "5-01",

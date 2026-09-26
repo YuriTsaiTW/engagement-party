@@ -14,9 +14,11 @@
 
 對應檔案為 `public/group-photo-pose/3/new.jpg` 與 `public/group-photo-pose/3/new.mp3`。圖片建議 JPG、PNG 或 WebP；音檔建議 MP3。圖片預設完整顯示。`4-05` 另用 `crop` 設定，讓頁面只顯示原圖左側黑白漫畫（400 × 424）；`7-04` 只顯示下方隊員（原圖 y=287 起，375 × 246）；素材牆與大圖共用裁切設定，原始圖片檔案保留。
 
-目前共有 32 組可抽選素材：3 人 3 組、4 人 12 組、5 人 5 組、6 人 5 組、7 人 4 組、8 人 3 組。已移除的素材不重用其 ID。
+目前共有 32 組可抽選素材：3 人 3 組、4 人 11 組、5 人 6 組、6 人 5 組、7 人 4 組、8 人 3 組。已移除的素材不重用其 ID。
 
 標題與圖片填妥即可進入抽選；音檔選填，尚未提供時保持 `"audio": ""`，不會播放音訊或顯示播放按鈕。目前 32 組素材皆已配對音檔。缺少標題或圖片的項目不會抽到。所有卡片只顯示人數，不顯示狀態小字。
+
+「JOJO 埃及奢華旅遊團」已改為五人素材，保留原 ID `4-01` 與音檔路徑 `4/01.mp3`，讓既有 session 紀錄及音檔配對延續。
 
 `id` 是不重複紀錄的依據，必須唯一且保持穩定，不要只因修改標題而更換。
 
@@ -59,7 +61,7 @@
 - `3/01.jpg`：吉伊卡哇 節奏感小隊 — https://www.twdreamlife.com/wp-content/uploads/2026/09/%E7%AF%80%E5%A5%8F%E6%84%9F%E5%B0%8F%E9%9A%8A.jpg
 - `3/03.jpg`：JOJO 監獄風雲 — https://cdn.ttv.com.tw/summernotefiles/News/31974362-7743-438d-a3f9-49ae8bf1514b.jpg
 - `3/04.webp`：超級瑪利歐銀河電影版 — https://media.nownews.com/nn_media/thumbnail/2026/03/1774712954064-bb11e0ff8e86424f8d02a84eaa8f9298-925x663.webp?unShow=false
-- `4/01.jpg`：JOJO 埃及奢華旅遊團 — https://i0.wp.com/static.jojowiki.com/images/4/40/latest/20191015215603/Letsgo.jpg
+- `5/jojo-egypt.jpg`：JOJO 埃及奢華旅遊團 — https://p2.bahamut.com.tw/HOME/creationCover/66/0005480266_B.JPG
 - `4/02.jpg`：黃金神威 斯千卡 — https://pbs.twimg.com/media/EkIOSOzUwAEDbYw.jpg
 - `4/03.png`：排球少年 — https://d2k0ho18x753k7.cloudfront.net/upload/img_up/3176f/648/bf0ce1c27b1112acb08a7889c0893d49.png
 - `4/04.jpg`：為美好的世界獻上祝福！ — https://p2.bahamut.com.tw/B/2KU/64/fc526f81d0eb81cd090b3ec31d1d1y05.JPG
@@ -98,7 +100,7 @@
 | 3 | 吉伊卡哇 節奏感小隊 | 節奏感小隊.mp3 | `3/01.mp3` |
 | 3 | JOJO 監獄風雲 | jojo 石之海.mp3 | `3/03.mp3` |
 | 3 | 超級瑪利歐銀河電影版 | 耀西.mp3 | `3/04.mp3` |
-| 4 | JOJO 埃及奢華旅遊團 | jojo 埃及旅行團.mp3 | `4/01.mp3` |
+| 5 | JOJO 埃及奢華旅遊團 | jojo 埃及旅行團.mp3 | `4/01.mp3` |
 | 4 | 黃金神威 斯千卡 | 黃金神威.mp3 | `4/02.mp3` |
 | 4 | 排球少年 | 排球少年.mp3 | `4/03.mp3` |
 | 4 | 為美好的世界獻上祝福！ | 為美好世界獻上祝福.mp3 | `4/04.mp3` |
